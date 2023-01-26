@@ -23,6 +23,18 @@ export const colors = {
     800: "#45565c",
     900: "#232b2e",
   },
+
+  yellow: {
+    100: "#ffffcc",
+    200: "#ffff99",
+    300: "#ffff66",
+    400: "#ffff33",
+    500: "#ffff00",
+    600: "#cccc00",
+    700: "#999900",
+    800: "#666600",
+    900: "#333300",
+  },
 };
 
 export const theme = createTheme({

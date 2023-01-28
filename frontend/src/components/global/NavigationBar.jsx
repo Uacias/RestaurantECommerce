@@ -1,13 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { colors } from "../../theme";
+
 import MenuIcon from "@mui/icons-material/Menu";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
-import { Badge, Box, IconButton, Typography } from "@mui/material";
+import { Badge, Box, IconButton, Tooltip, Typography } from "@mui/material";
 
 const NavigationBar = () => {
   const navigate = useNavigate();
-  // const useDispatch = useDispatch();
 
   return (
     <Box
@@ -15,7 +14,7 @@ const NavigationBar = () => {
       height="64px"
       margin="auto"
       paddingX="16px"
-      backgroundColor="rgba(0,0,0  ,0.85)"
+      backgroundColor="rgba(0, 0, 0,.9)"
       color="white"
       position="fixed"
       top="0"
@@ -29,16 +28,18 @@ const NavigationBar = () => {
         alignItems="center"
         columnGap="20px"
       >
-        <IconButton size="large" color="inherit" aria-label="menu">
-          <MenuIcon />
-        </IconButton>
+        <Tooltip title="Menu">
+          <IconButton size="large" color="inherit" aria-label="menu">
+            <MenuIcon />
+          </IconButton>
+        </Tooltip>
         <Box>
           <Typography
             variant="h5"
             sx={{ "&:hover": { cursor: "pointer" } }}
             onClick={() => navigate("./")}
           >
-            Restaurant
+            Le Nemours
           </Typography>
         </Box>
       </Box>
@@ -50,11 +51,18 @@ const NavigationBar = () => {
         alignItems="center"
         columnGap="20px"
       >
-        <IconButton size="large" color="inherit" aria-label="basket">
-          <Badge badgeContent={0} showZero>
-            <ShoppingBasketIcon />
-          </Badge>
-        </IconButton>
+        <Tooltip title="Basket">
+          <IconButton
+            size="large"
+            color="inherit"
+            aria-label="basket"
+            onClick={() => {}}
+          >
+            <Badge badgeContent={0} showZero max={99}>
+              <ShoppingBasketIcon />
+            </Badge>
+          </IconButton>
+        </Tooltip>
       </Box>
     </Box>
   );

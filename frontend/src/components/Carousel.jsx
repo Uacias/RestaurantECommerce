@@ -1,7 +1,7 @@
 import ArrowLefttIcon from "@mui/icons-material/ArrowLeft";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import { Box } from "@mui/material";
-import { IconButton, useMediaQuery } from "@mui/material";
+import { IconButton } from "@mui/material";
 import { Carousel as ReactCarousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
@@ -20,7 +20,6 @@ const Carousel = () => {
     <ReactCarousel
       infiniteLoop={true}
       showStatus={false}
-      showIndicators={false}
       showThumbs={false}
       renderArrowPrev={(onClickHandler, hasPrev, label) => (
         <IconButton

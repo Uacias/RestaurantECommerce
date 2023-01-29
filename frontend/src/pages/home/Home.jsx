@@ -5,9 +5,7 @@ import Menu from "../../components/global/Menu";
 const Home = () => {
   return (
     <>
-      <NavigationBar />
       <Carousel />
-      <Menu />
     </>
   );
 };

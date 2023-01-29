@@ -41,3 +41,14 @@ export const basketSlice = createSlice({
     },
   },
 });
+
+export const {
+  addToBasket,
+  removeFromBasket,
+  setIsBasketVisible,
+  setItems,
+  increaseCount,
+  decreaseCount,
+} = basketSlice.actions;
+
+export default basketSlice.reducer;

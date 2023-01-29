@@ -2,9 +2,13 @@ import { useNavigate } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import { Badge, Box, IconButton, Tooltip, Typography } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
+import { setIsBasketVisible } from "../../state";
 
 const NavigationBar = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const basket = useSelector((state) => state.basket.basket);
 
   return (
     <Box
@@ -54,9 +58,12 @@ const NavigationBar = () => {
             size="large"
             color="inherit"
             aria-label="basket"
-            onClick={() => {}}
+            onClick={() => {
+              dispatch(setIsBasketVisible({}));
+              console.log("basket shown");
+            }}
           >
-            <Badge badgeContent={0} showZero max={99}>
+            <Badge badgeContent={basket.length} showZero max={99}>
               <ShoppingBasketIcon />
             </Badge>
           </IconButton>

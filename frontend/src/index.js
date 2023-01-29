@@ -4,13 +4,22 @@ import App from "./App";
 import { theme } from "./theme";
 import { ThemeProvider } from "@emotion/react";
 import { CssBaseline } from "@mui/material";
+import { Provider } from "react-redux";
+import { configureStore } from "@reduxjs/toolkit";
+import basketReducer from "./state";
+
+const store = configureStore({
+  reducer: { basket: basketReducer },
+});
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <App />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <App />
+      </ThemeProvider>
+    </Provider>
   </React.StrictMode>
 );

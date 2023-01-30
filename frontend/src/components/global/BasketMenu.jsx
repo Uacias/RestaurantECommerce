@@ -2,11 +2,18 @@ import { Box, Typography, IconButton } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import CloseIcon from "@mui/icons-material/Close";
+import { fontSize } from "@mui/system";
+import { useDispatch, useSelector } from "react-redux";
+
+import { setIsBasketVisible } from "../../state";
 
 const BasketMenu = () => {
+  const dispatch = useDispatch();
+  const isBasketVisible = useSelector((state) => state.basket.isBasketVisible);
+
   return (
     <Box
-      display="block"
+      display={isBasketVisible ? "block" : "none"}
       position="fixed"
       zIndex={5}
       width="100%"
@@ -39,7 +46,13 @@ const BasketMenu = () => {
           <Typography variant="h3" color="white">
             Shopping Basket
           </Typography>
-          <IconButton caria-label="close">
+          <IconButton
+            caria-label="close"
+            size="large"
+            onClick={() => {
+              dispatch(setIsBasketVisible({}));
+            }}
+          >
             <CloseIcon sx={{ color: "white" }} />
           </IconButton>
         </Box>

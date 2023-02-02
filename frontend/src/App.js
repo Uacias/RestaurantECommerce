@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+
 import BasketMenu from "./components/global/BasketMenu";
 import NavigationBar from "./components/global/NavigationBar";
 import Home from "./pages/home/Home";
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>
+
         <BasketMenu />
       </BrowserRouter>
     </div>

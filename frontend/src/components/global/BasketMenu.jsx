@@ -94,7 +94,7 @@ const BasketMenu = () => {
                 <Box>
                   <IconButton
                     onClick={() => {
-                      dispatch(decreaseCount({}));
+                      dispatch(decreaseCount({ id: dish.id }));
                     }}
                   >
                     <RemoveIcon />
@@ -108,7 +108,7 @@ const BasketMenu = () => {
                 <Box>
                   <IconButton
                     onClick={() => {
-                      dispatch(increaseCount({}));
+                      dispatch(increaseCount({ id: dish.id }));
                     }}
                   >
                     <AddIcon />

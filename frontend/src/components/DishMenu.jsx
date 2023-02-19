@@ -7,7 +7,7 @@ import Dish from "./Dish";
 
 const DishMenu = () => {
   const dishes = useSelector((state) => state.basket.items);
-  const [categoryValue, setCategoryValue] = useState("appetizer");
+  const [categoryValue, setCategoryValue] = useState("all");
   const dispatch = useDispatch();
   const isMobile = useMediaQuery("(max-width:768px)");
 
@@ -63,7 +63,6 @@ const DishMenu = () => {
         <Tab label="Burger" value="burger" />
         <Tab label="Dessert" value="dessert" />
       </Tabs>
-
       <Box
         margin="0 auto"
         display="grid"

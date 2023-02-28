@@ -1,3 +1,4 @@
+import AboutUs from "../../components/AboutUs";
 import Carousel from "../../components/Carousel";
 import DishMenu from "../../components/DishMenu";
 const Home = () => {
@@ -5,6 +6,7 @@ const Home = () => {
     <>
       <Carousel />
       <DishMenu />
+      <AboutUs />
     </>
   );
 };

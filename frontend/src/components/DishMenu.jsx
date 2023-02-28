@@ -2,7 +2,7 @@ import { setItems } from "../state";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { Box, Tab, Tabs, Typography, useMediaQuery } from "@mui/material";
-import PhoneIcon from "@mui/icons-material/Phone";
+
 import Dish from "./Dish";
 
 const DishMenu = () => {
@@ -28,7 +28,7 @@ const DishMenu = () => {
   }, []);
 
   const menuCategoriesItems = {
-    appetizer: dishes.filter((e) => e.attributes.category === "dessert"),
+    appetizer: dishes.filter((e) => e.attributes.category === "appetizer"),
     soup: dishes.filter((e) => e.attributes.category === "soup"),
     burger: dishes.filter((e) => e.attributes.category === "burger"),
     steak: dishes.filter((e) => e.attributes.category === "steak"),

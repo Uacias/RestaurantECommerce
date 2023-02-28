@@ -16,7 +16,7 @@ const NavigationBar = () => {
       height="64px"
       margin="auto"
       paddingX="16px"
-      backgroundColor="rgba(0, 0, 0,.9)"
+      backgroundColor="rgba(0, 0, 0,.66)"
       color="white"
       position="fixed"
       top="0"
@@ -60,7 +60,6 @@ const NavigationBar = () => {
             aria-label="basket"
             onClick={() => {
               dispatch(setIsBasketVisible({}));
-              console.log("basket shown");
             }}
           >
             <Badge badgeContent={basket.length} showZero max={99}>
